@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Send, Bot, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { Send, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { FAQCard } from '@/components/FAQCard';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 import { AIResponse } from '@/components/AIResponse';
-import logoImage from '@/assets/ah-digitalstage-logo.png';
+import logoImage from '@/assets/ah-digital-agadir-logo.png';
 
 const Index = () => {
   const [question, setQuestion] = useState('');
@@ -109,15 +109,15 @@ const Index = () => {
           <div className="flex items-center justify-center mb-6">
             <img 
               src={logoImage} 
-              alt="AH DigitalStage Logo" 
+              alt="AH Digital Agadir Logo" 
               className="h-16 w-auto shadow-glow rounded-lg"
             />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 fade-in">
-            AH DigitalStage
+            AH Digital Agadir
           </h1>
           <p className="text-xl text-primary-foreground/90 mb-2 fade-in">
-            Votre hôtel digital de luxe
+            Startup digitale innovante
           </p>
         </div>
       </header>
@@ -204,59 +204,15 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Footer */}
+      {/* Footer simplifié */}
       <footer className="bg-primary text-primary-foreground py-12 px-4 mt-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
-            {/* Contact */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 flex items-center justify-center md:justify-start">
-                <Phone className="w-5 h-5 mr-2" />
-                Contact
-              </h4>
-              <div className="space-y-2 text-primary-foreground/80">
-                <p className="flex items-center justify-center md:justify-start">
-                  <Phone className="w-4 h-4 mr-2" />
-                  +33 1 23 45 67 89
-                </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <Mail className="w-4 h-4 mr-2" />
-                  contact@ahdigitalstage.fr
-                </p>
-              </div>
-            </div>
-
-            {/* Adresse */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 flex items-center justify-center md:justify-start">
-                <MapPin className="w-5 h-5 mr-2" />
-                Adresse
-              </h4>
-              <div className="text-primary-foreground/80">
-                <p>123 Avenue des Champs-Élysées</p>
-                <p>75008 Paris, France</p>
-              </div>
-            </div>
-
-            {/* Horaires */}
-            <div>
-              <h4 className="text-lg font-semibold mb-4 flex items-center justify-center md:justify-start">
-                <Clock className="w-5 h-5 mr-2" />
-                Réception
-              </h4>
-              <div className="text-primary-foreground/80">
-                <p>24h/24 - 7j/7</p>
-                <p>Service en continu</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-primary-foreground/20 pt-8 mt-8 text-center">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="border-t border-primary-foreground/20 pt-8 mt-8">
             <p className="text-primary-foreground/60">
-              © 2024 AH DigitalStage. Tous droits réservés.
+              © 2024 AH Digital Agadir. Tous droits réservés.
             </p>
             <p className="text-primary-foreground/60 text-sm mt-2">
-              Propulsé par l'IA - Assistant intelligent intégré
+              Startup digitale - Assistant IA intelligent
             </p>
           </div>
         </div>
