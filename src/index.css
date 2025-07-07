@@ -2,39 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Design system pour AH DigitalStage - Palette bleu nuit, blanc, doré et vert menthe */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Couleurs principales */
+    --background: 0 0% 98%;
+    --foreground: 220 40% 15%;
 
+    /* Bleu nuit principal */
+    --primary: 220 65% 18%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 220 55% 25%;
+    --primary-dark: 220 75% 12%;
+
+    /* Doré accent */
+    --accent: 45 90% 60%;
+    --accent-foreground: 220 40% 15%;
+    --accent-light: 45 85% 70%;
+    --accent-dark: 45 95% 50%;
+
+    /* Vert menthe */
+    --mint: 160 65% 65%;
+    --mint-foreground: 220 40% 15%;
+    --mint-light: 160 55% 75%;
+    --mint-dark: 160 75% 55%;
+
+    /* Cartes et surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 40% 15%;
+    --card-hover: 220 15% 97%;
 
+    /* Éléments secondaires */
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 40% 15%;
+
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 20% 45%;
+
+    /* Bordures et inputs */
+    --border: 220 15% 88%;
+    --input: 220 15% 95%;
+    --ring: 220 65% 18%;
+
+    /* Autres éléments */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 40% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Gradients et effets */
+    --gradient-primary: linear-gradient(135deg, hsl(220 65% 18%), hsl(220 55% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 90% 60%), hsl(45 85% 70%));
+    --gradient-mint: linear-gradient(135deg, hsl(160 65% 65%), hsl(160 55% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 65% 18%) 0%, hsl(220 55% 25%) 50%, hsl(160 65% 65%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(220 65% 18% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(220 65% 18% / 0.1);
+    --shadow-glow: 0 0 40px hsl(45 90% 60% / 0.3);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -100,6 +131,88 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+/* Classes utilitaires personnalisées */
+@layer components {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-mint {
+    background: var(--gradient-mint);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .ai-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
   }
 }
