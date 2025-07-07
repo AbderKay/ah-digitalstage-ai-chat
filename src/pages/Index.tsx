@@ -37,13 +37,13 @@ const Index = () => {
     }
   ];
 
-  /**
-   * Fonction pour envoyer la question à l'API webhook n8n
-   * Endpoint: http://localhost:5678/webhook/faq-question
-   * Méthode: POST
-   * Body: { question: string }
-   * Réponse attendue: { answer: string } ou { reponse: string }
-   */
+   /**
+    * Fonction pour envoyer la question à l'API webhook n8n
+    * Endpoint: http://localhost:5678/webhook-test/faq-question
+    * Méthode: POST
+    * Body: { question: string }
+    * Réponse attendue: { answer: string } ou { reponse: string }
+    */
   const handleSubmitQuestion = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -54,7 +54,7 @@ const Index = () => {
 
     try {
       // Appel au webhook n8n - Facilement intégrable avec n8n
-      const response = await fetch('http://localhost:5678/webhook/faq-question', {
+      const response = await fetch('http://localhost:5678/webhook-test/faq-question', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
